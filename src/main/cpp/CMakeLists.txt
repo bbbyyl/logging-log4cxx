@@ -285,6 +285,5 @@ if(LOG4CXX_ABI_CHECK)
         DEPENDS dump-abi
         COMMENT "Comparing ABI symbols")
 endif(LOG4CXX_ABI_CHECK)
-
-# 添加-fPIC 静态依赖apr 编译
-target_compile_options(log4cxx PRIVATE -fPIC)
+# 从当前路径找依赖库
+set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} -Wl,-rpath,.")
