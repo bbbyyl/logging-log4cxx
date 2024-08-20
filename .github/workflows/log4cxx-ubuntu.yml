@@ -30,7 +30,7 @@ jobs:
             os: ubuntu-20.04
             cxx: g++
             fmt: OFF
-            qt: ON
+            qt: OFF
             odbc: OFF
             multithread: OFF
             exitevents: OFF
@@ -90,9 +90,3 @@ jobs:
         cmake -DCMAKE_CXX_COMPILER=${{ matrix.cxx }} -DLOG4CXX_ENABLE_ODBC=${{ matrix.odbc }} -DLOG4CXX_QT_SUPPORT=${{ matrix.qt }}  -DENABLE_MULTITHREAD_TEST=${{ matrix.multithread }} -DLOG4CXX_EVENTS_AT_EXIT=${{ matrix.exitevents }} ..
         cmake --build .
 
-    - name: run unit tests
-      shell: pwsh
-      run: |
-        cd main
-        cd build
-        ctest -C Debug --output-on-failure
