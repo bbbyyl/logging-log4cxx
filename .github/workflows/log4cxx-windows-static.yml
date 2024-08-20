@@ -14,7 +14,7 @@
 # limitations under the License.
 name: log4cxx-windows-static
 
-on: [push, pull_request]
+on: [pull_request]
 
 jobs:
   job:
