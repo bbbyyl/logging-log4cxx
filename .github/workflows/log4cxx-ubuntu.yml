@@ -92,7 +92,7 @@ jobs:
          
     - name: 'Create release files'
       run: |
-        tar -czvf apache-log4cxx-my.tar.gz .
+        tar -czvf apache-log4cxx-my.tar.gz ./main
       
     - uses: actions/upload-artifact@v4
       if: always()
