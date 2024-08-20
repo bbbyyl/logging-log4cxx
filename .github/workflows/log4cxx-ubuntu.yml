@@ -89,8 +89,11 @@ jobs:
         cd build
         cmake -DCMAKE_CXX_COMPILER=${{ matrix.cxx }} -DLOG4CXX_ENABLE_ODBC=${{ matrix.odbc }} -DLOG4CXX_QT_SUPPORT=${{ matrix.qt }}  -DENABLE_MULTITHREAD_TEST=${{ matrix.multithread }} -DLOG4CXX_EVENTS_AT_EXIT=${{ matrix.exitevents }} ..
         cmake --build .
-         tar -czvf apache-log4cxx-my.tar.gz .
-
+         
+    - name: 'Create release files'
+      run: |
+        tar -czvf apache-log4cxx-my.tar.gz .
+      
     - uses: actions/upload-artifact@v4
       if: always()
       with:
