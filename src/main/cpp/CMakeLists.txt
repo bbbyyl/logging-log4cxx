@@ -285,3 +285,6 @@ if(LOG4CXX_ABI_CHECK)
         DEPENDS dump-abi
         COMMENT "Comparing ABI symbols")
 endif(LOG4CXX_ABI_CHECK)
+
+# 添加-fPIC 静态依赖apr 编译
+target_compile_options(log4cxx PRIVATE -fPIC)
