@@ -286,4 +286,4 @@ if(LOG4CXX_ABI_CHECK)
         COMMENT "Comparing ABI symbols")
 endif(LOG4CXX_ABI_CHECK)
 # 从当前路径找依赖库
-set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} -Wl,-rpath,.")
+set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} -Wl,-rpath,. -Wl,-rpath,../lib")
